@@ -1,0 +1,21 @@
+{
+  "name": "tienda-sass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/sass/**/*.scss:build/css",
+    "dev": "gulp dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-watch-sass": "^1.4.1",
+    "sass": "^1.55.0"
+  }
+}
