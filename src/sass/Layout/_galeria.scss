@@ -36,3 +36,40 @@
     }
 
 }
+
+
+.overlay{
+    position: fixed; //elemento fijo
+    top: 0;           //
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: grid;
+    place-items: center; // centa vertical y horizontal
+
+    background-color: rgba(v.$gris, $alpha: 0.8);
+
+    picture{
+        display: block;
+        max-width: 80rem;
+    }
+}
+
+.btn-cerrar{
+    width: 5rem;
+    height: 5rem;
+    font-size: 3rem;
+    color: v.$verde1;
+
+    border-radius: 50%;
+    background-color: v.$negro;
+    font-weight: 900;
+
+    display: grid;
+    place-items: center;
+    
+    &:hover{
+        cursor: pointer;
+    }
+}

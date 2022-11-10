@@ -23,9 +23,61 @@ function crearGaleria(){
         </picture>
         `;
 
+        imges.onclick = function(){ //
+            mostrarImg(i);
+        }
+
         //console.log(imges);
         galeria.appendChild(imges) //seleciona donde vas anhadir y cual sera 
     }
+
+}
+
+function mostrarImg(image){
+    const imges = document.createElement('picture') //crea una etiqueta con ..
+    imges.innerHTML= ` 
+    <picture>
+    <source srcset='../build/img/${image}.avif' type=image/avif>
+    <source srcset='../build/img/${image}.webp' type=image/webp>
+    <source srcset='../build/img/${image}.jpg' type=image/jpg>
+    <img loading='lazy' width='200' heigth='300' src='../build/img/${image}.jpg' alt='Imagen'>
+    `; //insercion de html de contenido
+
+
+    //crea un elemento para anhadir las imagenes
+    const overlay = document.createElement('div');
+    overlay.appendChild(imges);
+    overlay.classList.add('overlay');
+
+    
+    overlay.onclick = function(){
+        const body = document.querySelector('body');
+        body.classList.remove('fijar-imge')
+        overlay.remove();
+
+    }
+
+
+    //lo inserta en el documento
+    const body = document.querySelector('body');
+    body.appendChild(overlay);
+    body.classList.add('fijar-imge')
+
+
+    //botton para cerrar la imagen flotante
+
+    const cerrar= document.createElement('p')
+    cerrar.textContent= ' X';
+    cerrar.classList.add('btn-cerrar');
+
+    cerrar.onclick = function(){
+        const body = document.querySelector('body');
+        body.classList.remove('fijar-imge')
+        overlay.remove();
+
+    }
+
+    overlay.appendChild(cerrar); //anhadirmos el btn de cerrar
 
 
 }
