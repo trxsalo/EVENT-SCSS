@@ -1,0 +1,72 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+
+.entrada{
+    padding: 5rem 0;
+    background-color: v.$verde1;
+    h3{
+        color: v.$gris;
+        text-align: center;
+        font-weight: 9  00;
+    }
+
+    .contenedor-entrada{
+
+        @include m.telefono{
+            width: 70%;
+            @include m.grid(1,2fr,5rem);
+        }
+
+        @include m.table{
+            width: 50rem;
+            @include m.grid(2,1fr,5rem);
+            //place-items:center;
+        }
+
+        @include m.desktop{
+            width: 120rem;
+        }
+
+    }
+
+
+}
+
+.pase{
+    text-align: center;
+
+    p{
+        padding: 2.5rem 0 ;
+        font-size: 2.5rem;
+        margin: 0;
+        color: v.$gris;
+        font-weight: 900;
+    }
+
+    &-header{ //apersontoma la clase padre
+        text-align: center;
+        background-color:v.$morado ;
+        color: v.$blanco;
+    }
+
+    &-body{
+        text-align: center;
+        background-color:v.$verde ;
+    }
+
+    &-footer{
+        text-align: center;
+        background-color:v.$celeste ;
+    }
+
+}
+
+.pase{
+    ul{
+        @include m.resetearlist;
+        li{
+            padding: 1rem 0;
+        }
+    }
+}

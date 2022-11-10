@@ -17,9 +17,9 @@
                 Evento de Ilustracion y Animacion 2D
             </h1>
             <nav class="navegacion-principal">
-                <a href="#">Artista</a>
-                <a href="#">Galeria</a>
-                <a href="#">Secciones</a>
+                <a href="#lineup">Artista</a>
+                <a href="#galeria">Galeria</a>
+                <a href="#entrada">Entradas</a>
             </nav>
         </div>
     </header>
@@ -69,7 +69,7 @@
         </div>
     </section>
 
-    <section class="lineup">
+    <section id='lineup' class="lineup">
         <h3>
             Seminarios
         </h3>
@@ -222,7 +222,7 @@
     </section>
 
 
-    <section class="contenedor galeria">
+    <section id='galeria' class="contenedor galeria">
         <h3>GALERIA</h3>
 
         <ul class="galeria-ul"></ul>
@@ -230,6 +230,54 @@
     </section>
 
     <script src="../build//js/app.js"></script>
+
+    <section  class="entrada bg-verde" >
+        <h3>Entradas</h3>
+
+        <div id='entrada' class="contenedor contenedor-entrada">
+
+            <div class="pase basico">
+                <p>Pase 1 Dia</p>
+                <header class="pase-header">
+                    <p>Incluye</p>
+                </header>
+                    <div class="pase-body">
+                        <ul>
+                            <li>Almuerzo</li>
+                            <li>Regalo Sopresa</li>
+                        </ul>
+                    </div>
+                <footer class="pase-footer">
+                    <p>100$</p>
+                </footer>
+            </div>
+
+            <div class="pase completo">
+                <p>Pase 2 Dias </p>
+                <header class="pase-header">
+                    <p>Incluye</p>
+                </header>
+                    <div class="pase-body">
+                        <ul>
+                            <li>Desayuno</li>
+                            <li>Almuerzo</li>
+                            <li>Certificado</li>
+                            <li>Regalo Sopresa</li>
+                        </ul>
+                    </div>
+                <footer class="pase-footer">
+                    <p>200$</p>
+                </footer>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>
+            Evento de Ilustracion y Animacion 2D. Todos los derechos reservados
+        </p>
+    </footer>
 </body>
 
 </html>
