@@ -12,7 +12,7 @@
         } 
 }
 
-@mixin table {
+@mixin table{
         @media (min-width: v.$tablet) {
             @content;
         } 
@@ -27,4 +27,17 @@
         @media (min-width: v.$desktopXL) {
             @content;
         } 
+}
+
+@mixin grid($columnas,$fracion,$espaciado){
+    display: grid;
+    grid-template-columns: repeat($columnas,$fracion);
+    column-gap: $espaciado;
+}
+
+
+@mixin resetearlist {
+    margin: 0;
+    padding: 0;
+    list-style: none; //quita la vinhta de los li
 }

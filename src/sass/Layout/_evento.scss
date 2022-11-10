@@ -1,0 +1,57 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.sobre-evento{
+        padding-top: 7rem;
+        @include m.telefono{
+
+            //margin: 4rem auto;
+        display: grid;
+        grid-template-columns: repeat(1,2fr);
+        column-gap: 2rem;
+        }
+
+        @include m.desktop{
+            grid-template-columns: repeat(2,1fr);
+
+            padding: 1rem auto;
+        }
+
+        img{
+
+            @include m.telefono{
+                height:48rem;
+            }
+
+            @include m.desktop{
+                width: 85%;
+                height: 85%;
+            }
+
+        }
+}
+
+.contenido-evento{
+    h2{
+
+        @include m.telefono{
+            margin: 3rem;
+        }
+        @include m.desktop{
+            margin: 0;
+        }
+        color: v.$gris;
+        font-size: 4rem;
+    }
+    .fecha{
+        font-weight: 700;
+        background-color: v.$verde1;
+        @include m.telefono{
+            font-size: 2rem;
+        }
+    }
+    p{
+        font-size: 2.3rem;
+        color: v.$negro;
+    }
+}
