@@ -615,6 +615,10 @@ img {
   display: flex;
   flex-direction: column;
 }
+.seminario p {
+  padding: 0 2rem;
+  font-weight: 600;
+}
 @media (min-width: 600px) {
   .seminario {
     max-width: 45rem;
