@@ -4,12 +4,35 @@ document.addEventListener('DOMContentLoaded', function(){ ///seleciona todo el d
 })
 
 function iniciarApp(){
-
-    crearGaleria();
-    scrollNav();
+    navegacionFija(); //al hacer scroll hacia abajo, aprece la navehacion de enlace
+    crearGaleria(); //al cargar la pagina se carga la galeria de imagenes
+    scrollNav(); // un scroll suave
 }
 
-function scrollNav(){
+
+function navegacionFija(){
+    const barra =  document.querySelector('.header');
+    const lineup = document.querySelector('.lineup');
+    const body = document.querySelector('body')
+
+    window.addEventListener('scroll', function(){
+        if(lineup.getBoundingClientRect().top < 0 ){
+            barra.classList.add('fijo');
+            //evento.classList.add('fijo');
+            lineup.classList.add('fijo');
+            body.classList.add('body-scroll');
+        }
+        else{
+            barra.classList.remove('fijo');
+            //evento.classList.remove('fijo');
+            lineup.classList.remove('fijo');
+            body.classList.remove('body-scroll');
+        }
+        //console.log(evento.getBoundingClientRect()); //idica informacion de donde se ecuetra
+    })
+}
+
+function scrollNav(){ ///efecto 
     const enlace = document.querySelectorAll('.navegacion-principal a');
 
     enlace.forEach(enlace=>{

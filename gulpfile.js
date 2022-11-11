@@ -5,6 +5,10 @@ const {parallel} = require('gulp')
 //css
 const sass = require('gulp-sass')(require('sass'))
 const plumber = require('gulp-plumber')
+const autoprefixer = require('autoprefixer'); //para dar soporte 
+const cssnano = require('cssnano'); //para comprimir
+const postcss = require('gulp-postcss');
+const maps = require('gulp-sourcemaps');
 //webp
 const webp = require('gulp-webp')
 //IMAGEMIN
@@ -17,17 +21,20 @@ const avif = require('gulp-avif')
 
 //css gulp
 function css(done){
-    gul.src('./src/sass/**/*.scss')
-        .pipe(plumber())
-        .pipe(sass())
-        .pipe(gul.dest('./build/css'))
+    gul.src('./src/sass/**/*.scss')//busca y
+        .pipe(maps.init())//guarda referencia
+        .pipe(plumber()) //mensaje resumido de errxor
+        .pipe(sass()) //compila scss
+        .pipe(postcss([autoprefixer(), cssnano()])) // soporte y comprime 
+        .pipe(maps.write('.')) //escribe de que documento scss pertenence el estilo apliacado de css compilado
+        .pipe(gul.dest('./build/css')) //lo gurada 
     done()
 }
 
 //arranca para desarrollo conpilar
 function dev(done){
-    gul.watch('./src/sass/**/*.scss', css);
-    gul.watch('./src/js/**/*.js', js);
+    gul.watch('./src/sass/**/*.scss', css); //mira y ejecuta la funcion css
+    gul.watch('./src/js/**/*.js', js);//mira y ejecuta la funcion JS
     done();
 }
 

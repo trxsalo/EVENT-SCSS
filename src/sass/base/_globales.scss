@@ -17,6 +17,10 @@ body{
 
     &.fijar-imge{ //cunado aparesca esta clase anhadele este estilo
         overflow: hidden;
+
+    }
+    &.body-scroll{
+        padding-top: 5.606rem;
     }
 }
 
