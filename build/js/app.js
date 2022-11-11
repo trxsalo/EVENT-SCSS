@@ -1,5 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', function(){ ///seleciona todo el dom (documento html)
+    alert('Este es solo un Proyecto Personal  -trxSalo')
     iniciarApp();   //inidca que cuando carge se ejecute una funcion o funciones
 })
 
